@@ -9,8 +9,11 @@ export class WishesService {
   lists: List[] = [];
 
 
-  constructor() { 
-    console.log('servicio inicializado');
+  constructor() {
+    const list1 = new List('Pendientes');
+    const list2 = new List('En proceso');
+
+    this.lists.push(list1, list2);
   }
 
 }
