@@ -10,10 +10,46 @@ export class WishesService {
 
 
   constructor() {
-    const list1 = new List('Pendientes');
-    const list2 = new List('En proceso');
 
-    this.lists.push(list1, list2);
+    this.loadStorage();
+
+  }
+
+  getList(listId: string | number) {
+    const id = Number(listId);
+
+    return this.lists.find(dataList => dataList.id === id);
+  }
+
+
+  createList(title: string) {
+
+    const newList = new List(title);
+
+    this.lists.push(newList);
+    this.saveStorage();
+
+    return newList.id;
+  }
+
+  saveStorage() {
+
+    localStorage.setItem('data', JSON.stringify(this.lists));
+
+  }
+
+  loadStorage() {
+
+    if (localStorage.getItem('data')) {
+
+      this.lists = JSON.parse(localStorage.getItem('data'));
+
+    } else {
+
+      this.lists = [];
+
+    }
+
   }
 
 }

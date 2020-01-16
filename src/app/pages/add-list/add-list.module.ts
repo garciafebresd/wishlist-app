@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddItemPageRoutingModule } from './add-item-routing.module';
+import { AddListPageRoutingModule } from './add-list-routing.module';
 
-import { AddItemPage } from './add-item.page';
+import { AddListPage } from './add-list.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AddItemPageRoutingModule
+    AddListPageRoutingModule
   ],
-  declarations: [AddItemPage]
+  declarations: [AddListPage]
 })
-export class AddItemPageModule {}
+export class AddListPageModule {}
