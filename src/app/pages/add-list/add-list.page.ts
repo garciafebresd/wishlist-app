@@ -41,5 +41,20 @@ export class AddListPage implements OnInit {
     this.wishesService.saveStorage();
   }
 
+  toggleCheckbox(item: ListItem) {
+
+    const pendings = this.list.items
+      .filter(data => !data.completed);
+
+    if (pendings.length === 0) {
+      this.list.done = true;
+      this.list.doneAt = new Date();
+    } else {
+      this.list.done = false;
+      this.list.doneAt = null;
+    }
+
+    this.wishesService.saveStorage();
+  }
 
 }
