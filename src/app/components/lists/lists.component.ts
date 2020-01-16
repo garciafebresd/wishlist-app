@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { List } from '../../models/list.model';
 import { WishesService } from '../../services/wishes.service';
 import { Router } from '@angular/router';
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class ListsComponent implements OnInit {
 
+  @Input() completed: true;
+
   constructor(public wishesService: WishesService,
               public router: Router) { }
 
@@ -17,8 +19,19 @@ export class ListsComponent implements OnInit {
 
   selectedList(list: List) {
 
-    this.router.navigateByUrl(`/tabs/tab1/addList/${list.id}`);
+    if (this.completed) {
 
+      this.router.navigateByUrl(`/tabs/tab1/addList/${list.id}`);
+
+    } else {
+
+      this.router.navigateByUrl(`/tabs/tab2/addList/${list.id}`);
+
+    }
+  }
+
+  removeItem(list: List){
+    this.wishesService.removeList(list);
   }
 
 }
