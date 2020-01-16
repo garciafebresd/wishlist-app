@@ -57,4 +57,11 @@ export class AddListPage implements OnInit {
     this.wishesService.saveStorage();
   }
 
+  removeItem(index: number) {
+
+    this.list.items.splice(index, 1);
+    this.wishesService.saveStorage();
+  }
+
+
 }

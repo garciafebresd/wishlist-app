@@ -8,13 +8,8 @@
 
 <ion-content color="dark">
 
-    <ion-list color="dark">
-        <ion-item *ngFor="let item of wishesService.lists" detail color="dark">
-            <ion-label>{{ item.title }}</ion-label>
-        </ion-item>
-    </ion-list>
+    <app-lists></app-lists>
 
-    <!-- fab placed to the top end -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button color="tertiary" (click)="addList()">
             <ion-icon name="add"></ion-icon>

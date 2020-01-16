@@ -11,8 +11,8 @@ import { AlertController } from '@ionic/angular';
 export class Tab1Page {
 
   constructor(public wishesService: WishesService,
-    private router: Router,
-    private alertController: AlertController) { }
+              private router: Router,
+              private alertController: AlertController) { }
 
   async addList() {
 
