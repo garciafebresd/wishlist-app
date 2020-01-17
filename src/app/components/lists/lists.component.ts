@@ -54,6 +54,7 @@ export class ListsComponent implements OnInit {
           role: 'cancel',
           handler: () => {
             console.log('cancelar');
+            this.ionLista.closeSlidingItems();
           }
         },
         {
